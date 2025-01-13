@@ -36,6 +36,6 @@ jar {
     }
 }
 
-tasks.getByName("run", JavaExec) {
+tasks.named("run", JavaExec) {
     standardInput = System.in
 }
