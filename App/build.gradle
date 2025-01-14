@@ -23,12 +23,12 @@ test {
 }
 
 application {
-    mainClass = 'hexlet.code.Main'
+    mainClass = 'hexlet.code.App'
 }
 
 jar {
     manifest {
-        attributes "Main-Class": "hexlet.code.Main"
+        attributes "Main-Class": "hexlet.code.App"
     }
 
     from {
