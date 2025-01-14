@@ -41,6 +41,8 @@ public final class Even {
                         "If you want to exit - answer '0'.");
             }
         }
+        System.out.println("Congratulations, " + Greet.getName() + "!");
+        System.out.println();
     }
 
     private static boolean isCorrect(String userAnswer, boolean isEven) {
