@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Greet {
+class Greet {
     private static String name;
 
     public static void greetings() {
