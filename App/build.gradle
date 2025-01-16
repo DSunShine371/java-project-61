@@ -28,7 +28,7 @@ application {
 
 jar {
     archiveBaseName.set('App')
-    version = '1.9.0'
+    version = '2.0.0'
     manifest {
         attributes "Main-Class": "hexlet.code.App"
     }

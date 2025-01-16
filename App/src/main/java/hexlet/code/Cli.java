@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-class Cli {
+final class Cli {
     private Cli() {
         throw new IllegalStateException("Utility class");
     }
