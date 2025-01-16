@@ -2,10 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public final class Calc extends Engine {
-    private Random random = new Random();
 
     @Override
     public String askQuestionAndReturnAnswer() {

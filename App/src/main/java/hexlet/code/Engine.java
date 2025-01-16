@@ -1,6 +1,9 @@
 package hexlet.code;
 
+import java.util.Random;
+
 public abstract class Engine {
+    protected Random random = new Random();
 
     public void start() {
         Greet.greetings();
@@ -23,10 +26,6 @@ public abstract class Engine {
         System.out.println("Congratulations, " + Greet.getName() + "!");
         System.out.println();
 
-    }
-
-    public void rules(String rule) {
-        System.out.println(rule);
     }
 
     public abstract String askQuestionAndReturnAnswer();
