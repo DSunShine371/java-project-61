@@ -11,6 +11,7 @@ public class App {
         GCD gcd = new GCD();
         Progression progression = new Progression();
         Prime prime = new Prime();
+
         while (true) {
             switch (getUserChoice()) {
                 case 0:
