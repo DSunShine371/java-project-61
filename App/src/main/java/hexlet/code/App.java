@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class App {
         Even even = new Even();
         Calc calc = new Calc();
         GCD gcd = new GCD();
+        Progression progression = new Progression();
         while (true) {
             switch (getUserChoice()) {
                 case 0:
@@ -26,6 +28,9 @@ public class App {
                     break;
                 case 4:
                     gcd.start();
+                    break;
+                case 5:
+                    progression.start();
                     break;
                 default:
                     System.out.println("    Error\nSomething went wrong ;)");
@@ -44,17 +49,18 @@ public class App {
                     2 - Even
                     3 - Calc
                     4 - GCD
+                    5 - Progression
                     0 - Exit""");
             String userInput = scanner.nextLine();
 
             try {
                 choice = Integer.parseInt(userInput);
-                if (choice >= 0 && choice <= 4) {
+                if (choice >= 0 && choice <= 5) {
                     System.out.println("You selected: " + choice);
                     System.out.println();
                     return choice;
                 } else {
-                    System.out.println("Please enter a number between 0 and 4.");
+                    System.out.println("Please enter a number between 0 and 5.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("The entered option does not exist. Please enter a valid integer.");
