@@ -15,6 +15,7 @@ public final class Prime extends Engine {
         for (int i = 2; i <= Math.sqrt(randomNumber); i++) {
             if (randomNumber % i == 0) {
                 isPrime = false;
+                break;
             }
         }
         correctAnswer = isPrime ? "yes" : "no";

@@ -8,7 +8,7 @@ public final class Progression extends Engine {
         int startNum = random.nextInt(10) + 1;
         String[] arrayNumbers = new String[5 + random.nextInt(6)];
         arrayNumbers[0] = String.valueOf(startNum);
-        int progressionStep = 0;
+        int progressionStep;
         switch (random.nextInt(3)) {
             case 0:
                 progressionStep = random.nextInt(5) + 1;
