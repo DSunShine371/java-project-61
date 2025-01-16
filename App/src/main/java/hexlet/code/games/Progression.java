@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public class Progression extends Engine {
+public final class Progression extends Engine {
     @Override
     public String askQuestionAndReturnAnswer() {
         int startNum = random.nextInt(10) + 1;
