@@ -3,10 +3,6 @@ package hexlet.code;
 final class Greet {
     private static String name;
 
-    private Greet() {
-        throw new IllegalStateException("Utility class");
-    }
-
     public static void greetings() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
