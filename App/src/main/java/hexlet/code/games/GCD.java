@@ -8,12 +8,15 @@ public final class GCD extends Engine {
     public String askQuestionAndReturnAnswer() {
         int num1 = random.nextInt(50) + 1;
         int num2 = random.nextInt(50) + 1;
-        int correctAnswer;
+        int correctAnswer = 500;
 
         boolean check = false;
         while (!check) {
-            if ((num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0)) {
+            if (num1 % 2 == 0 && num2 % 2 != 0) {
                 num2 = random.nextInt(50) + 1;
+                continue;
+            } else if (num1 % 2 != 0 && num2 % 2 == 0) {
+                num1 = random.nextInt(50) + 1;
                 continue;
             }
             check = true;
