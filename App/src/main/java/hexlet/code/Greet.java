@@ -1,7 +1,11 @@
 package hexlet.code;
 
-final class Greet {
+class Greet {
     private static String name;
+
+    private Greet() {
+        throw new IllegalStateException("Utility class");
+    }
 
     public static void greetings() {
         System.out.println("Welcome to the Brain Games!");
