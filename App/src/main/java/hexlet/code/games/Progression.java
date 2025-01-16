@@ -14,14 +14,14 @@ public final class Progression extends Engine {
                 progressionStep = random.nextInt(5) + 1;
                 for (int i = 1; i < arrayNumbers.length; i++) {
                     arrayNumbers[i] = String.valueOf(startNum + progressionStep);
-                    startNum+= progressionStep;
+                    startNum += progressionStep;
                 }
                 break;
             case 1:
                 progressionStep = random.nextInt(5) + 1;
                 for (int i = 1; i < arrayNumbers.length; i++) {
                     arrayNumbers[i] = String.valueOf(startNum + progressionStep);
-                    startNum+= progressionStep;
+                    startNum += progressionStep;
                     progressionStep++;
                 }
                 break;
@@ -29,7 +29,7 @@ public final class Progression extends Engine {
                 progressionStep = random.nextInt(4) + 2;
                 for (int i = 1; i < arrayNumbers.length; i++) {
                     arrayNumbers[i] = String.valueOf(startNum * progressionStep);
-                    startNum*= progressionStep;
+                    startNum *= progressionStep;
                 }
                 break;
             default:
