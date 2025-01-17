@@ -26,17 +26,6 @@ application {
     mainClass = 'hexlet.code.App'
 }
 
-jar {
-    archiveBaseName.set('App')
-    manifest {
-        attributes "Main-Class": "hexlet.code.App"
-    }
-
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
 tasks.named("run", JavaExec) {
     standardInput = System.in
 }
