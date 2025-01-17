@@ -12,31 +12,29 @@ public class App {
         Progression progression = new Progression();
         Prime prime = new Prime();
 
-        while (true) {
-            switch (getUserChoice()) {
-                case 0:
-                    return;
-                case 1:
-                    Greet.greetings();
-                    break;
-                case 2:
-                    even.start();
-                    break;
-                case 3:
-                    calc.start();
-                    break;
-                case 4:
-                    gcd.start();
-                    break;
-                case 5:
-                    progression.start();
-                    break;
-                case 6:
-                    prime.start();
-                    break;
-                default:
-                    System.out.println("    Error\nSomething went wrong ;)");
-            }
+        switch (getUserChoice()) {
+            case 0:
+                return;
+            case 1:
+                Greet.greetings();
+                break;
+            case 2:
+                even.start();
+                break;
+            case 3:
+                calc.start();
+                break;
+            case 4:
+                gcd.start();
+                break;
+            case 5:
+                progression.start();
+                break;
+            case 6:
+                prime.start();
+                break;
+            default:
+                System.out.println("    Error\nSomething went wrong ;)");
         }
     }
 
