@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Random;
 
 public abstract class Engine {
+    private static final int MAX_COUNT_OF_ROUND = 3;
     private final Random random = new Random();
 
     /**
@@ -17,9 +18,8 @@ public abstract class Engine {
         // Launch Logic
         Greet.greetings();
         printRules();
-        int maxCountOfRound = 3;
         int countOfRound = 0;
-        while (countOfRound < maxCountOfRound) {
+        while (countOfRound < MAX_COUNT_OF_ROUND) {
             String correctAnswer = askQuestionAndReturnAnswer();
             String userAnswer = Cli.readLine();
             System.out.println("Your answer: " + userAnswer);
@@ -43,6 +43,16 @@ public abstract class Engine {
 
     public abstract void printRules();
 
+    /**
+     * Generates a random integer between 1 and the specified maximum value.
+     *
+     * <p>
+     * This method can be overridden in subclasses if different randomization logic is needed.
+     * </p>
+     *
+     * @param maxValue the upper bound (exclusive) for the random number generation
+     * @return a random integer between 1 and maxValue (inclusive)
+     */
     public int getRandom(int maxValue) {
         return random.nextInt(maxValue) + 1;
     }

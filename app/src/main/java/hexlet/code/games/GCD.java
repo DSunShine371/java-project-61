@@ -4,17 +4,17 @@ import hexlet.code.Engine;
 
 
 public final class GCD extends Engine {
-    private static final int MAX_VALUE_OF_RANDOM = 50;
+    private static final int MAX_VALUE_FOR_NUMBERS = 50;
     @Override
     public String askQuestionAndReturnAnswer() {
-        int num1 = getRandom(MAX_VALUE_OF_RANDOM);
-        int num2 = getRandom(MAX_VALUE_OF_RANDOM);
+        int num1 = getRandom(MAX_VALUE_FOR_NUMBERS);
+        int num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
         int correctAnswer;
 
         boolean check = false;
         while (!check) {
             if ((num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0)) {
-                num2 = getRandom(50);
+                num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
                 continue;
             }
             check = true;
