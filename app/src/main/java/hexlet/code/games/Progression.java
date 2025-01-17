@@ -3,16 +3,16 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Progression extends Engine {
+    private static final int MAX_VALUE_FOR_START = 10;
+    private static final int MAX_VALUE_FOR_LENGTH = 5;
+    private static final int MIN_VALUE_FOR_LENGTH = 5;
+    private static final int MAX_VALUE_FOR_PROGRESSION_STEP = 5;
+    private static final int MIN_VALUE_FOR_PROGRESSION_STEP = 1;
     @Override
     public String askQuestionAndReturnAnswer() {
-        int maxValueForStart = 10;
-        int maxValueForLength = 5;
-        int minValueForLength = 5;
-        int maxValueForProgressionStep = 5;
-        int minValueForProgressionStep = 1;
-        int startNum = getRandom(maxValueForStart);
-        int arrayLength = minValueForLength + getRandom(maxValueForLength);
-        int progressionStep = minValueForProgressionStep + getRandom(maxValueForProgressionStep);
+        int startNum = getRandom(MAX_VALUE_FOR_START);
+        int arrayLength = MIN_VALUE_FOR_LENGTH + getRandom(MAX_VALUE_FOR_LENGTH);
+        int progressionStep = MIN_VALUE_FOR_PROGRESSION_STEP + getRandom(MAX_VALUE_FOR_PROGRESSION_STEP);
 
         String[] arrayNumbers = new String[arrayLength];
         arrayNumbers[0] = String.valueOf(startNum);

@@ -4,12 +4,11 @@ import hexlet.code.Engine;
 
 
 public final class GCD extends Engine {
-
+    private static final int MAX_VALUE_OF_RANDOM = 50;
     @Override
     public String askQuestionAndReturnAnswer() {
-        int maxValueOfRandom = 50;
-        int num1 = getRandom(maxValueOfRandom);
-        int num2 = getRandom(maxValueOfRandom);
+        int num1 = getRandom(MAX_VALUE_OF_RANDOM);
+        int num2 = getRandom(MAX_VALUE_OF_RANDOM);
         int correctAnswer;
 
         boolean check = false;
