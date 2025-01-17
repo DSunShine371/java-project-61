@@ -20,6 +20,7 @@ public abstract class Engine {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
                         correctAnswer + "'.");
                 System.out.println("Let's try again, " + Greet.getName() + "!");
+                return;
             }
 
         }
