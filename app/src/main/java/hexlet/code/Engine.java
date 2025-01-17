@@ -4,8 +4,7 @@ import java.util.Random;
 
 public abstract class Engine {
     private final Random random = new Random();
-    private final int maxCountOfRound = 3;
-    private int countOfRound = 0;
+
     /**
      * Starts the process.
      *
@@ -18,6 +17,8 @@ public abstract class Engine {
         // Launch Logic
         Greet.greetings();
         printRules();
+        int maxCountOfRound = 3;
+        int countOfRound = 0;
         while (countOfRound < maxCountOfRound) {
             String correctAnswer = askQuestionAndReturnAnswer();
             String userAnswer = Cli.readLine();
