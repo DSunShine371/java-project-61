@@ -7,7 +7,7 @@ public final class Progression extends Engine {
     public String askQuestionAndReturnAnswer() {
         int startNum = getRandom(10);
         int arrayLength = 5 + getRandom(5);
-        int progressionStep = getRandom(15);
+        int progressionStep = 1 + getRandom(14);
 
         String[] arrayNumbers = new String[arrayLength];
         arrayNumbers[0] = String.valueOf(startNum);
@@ -15,7 +15,7 @@ public final class Progression extends Engine {
             startNum += progressionStep;
             arrayNumbers[i] = String.valueOf(startNum);
         }
-        int hiddenCell = getRandom(arrayNumbers.length);
+        int hiddenCell = getRandom(arrayNumbers.length - 1);
         String correctAnswer = arrayNumbers[hiddenCell];
         arrayNumbers[hiddenCell] = "..";
         String arrayForQuestion = String.join(" ", arrayNumbers);
