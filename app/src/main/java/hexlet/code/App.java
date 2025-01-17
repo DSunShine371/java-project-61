@@ -1,10 +1,22 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
 public class App {
+    private static final int GAME_OPTION_EXIT = 0;
+    private static final int GAME_OPTION_GREET = 1;
+    private static final int GAME_OPTION_EVEN = 2;
+    private static final int GAME_OPTION_CALC = 3;
+    private static final int GAME_OPTION_GCD = 4;
+    private static final int GAME_OPTION_PROGRESSION = 5;
+    private static final int GAME_OPTION_PRIME = 6;
+
     public static void main(String[] args) {
         Even even = new Even();
         Calc calc = new Calc();
@@ -13,24 +25,24 @@ public class App {
         Prime prime = new Prime();
 
         switch (getUserChoice()) {
-            case 0:
+            case GAME_OPTION_EXIT:
                 return;
-            case 1:
+            case GAME_OPTION_GREET:
                 Greet.greetings();
                 break;
-            case 2:
+            case GAME_OPTION_EVEN:
                 even.start();
                 break;
-            case 3:
+            case GAME_OPTION_CALC:
                 calc.start();
                 break;
-            case 4:
+            case GAME_OPTION_GCD:
                 gcd.start();
                 break;
-            case 5:
+            case GAME_OPTION_PROGRESSION:
                 progression.start();
                 break;
-            case 6:
+            case GAME_OPTION_PRIME:
                 prime.start();
                 break;
             default:

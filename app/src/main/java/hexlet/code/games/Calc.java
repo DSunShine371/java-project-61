@@ -3,15 +3,14 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Calc extends Engine {
+    private final int num1 = getRandom(20);
+    private final int num2 = getRandom(20);
+    private int correctAnswer = 500;
 
     @Override
     public String askQuestionAndReturnAnswer() {
-        int num1 = random.nextInt(20) + 1;
-        int num2 = random.nextInt(20) + 1;
-        int correctAnswer = 500;
-
         System.out.print("Question: ");
-        switch (random.nextInt(3)) {
+        switch (getRandom(3)) {
             case 0:
                 correctAnswer = num1 + num2;
                 System.out.println(num1 + " + " + num2);

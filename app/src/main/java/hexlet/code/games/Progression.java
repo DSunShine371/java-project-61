@@ -3,18 +3,18 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Progression extends Engine {
+    private int startNum = getRandom(10);
+    private final int arrayLength = 5 + getRandom(5);
+    private final int progressionStep = getRandom(15);
     @Override
     public String askQuestionAndReturnAnswer() {
-        int startNum = random.nextInt(10) + 1;
-        String[] arrayNumbers = new String[5 + random.nextInt(6)];
+        String[] arrayNumbers = new String[arrayLength];
         arrayNumbers[0] = String.valueOf(startNum);
-        int progressionStep;
-        progressionStep = random.nextInt(15) + 1;
         for (int i = 1; i < arrayNumbers.length; i++) {
             arrayNumbers[i] = String.valueOf(startNum + progressionStep);
             startNum += progressionStep;
         }
-        int hiddenCell = random.nextInt(arrayNumbers.length);
+        int hiddenCell = getRandom(arrayNumbers.length);
         String correctAnswer = arrayNumbers[hiddenCell];
         arrayNumbers[hiddenCell] = "..";
         String arrayForQuestion = String.join(" ", arrayNumbers);

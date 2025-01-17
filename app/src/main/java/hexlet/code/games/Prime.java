@@ -3,9 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Prime extends Engine {
+    private final int randomNumber = getRandom(61);
     @Override
     public String askQuestionAndReturnAnswer() {
-        int randomNumber = random.nextInt(61) + 1;
         System.out.println("Question: " + randomNumber);
         boolean isPrime = true;
         String correctAnswer;

@@ -3,13 +3,23 @@ package hexlet.code;
 import java.util.Random;
 
 public abstract class Engine {
-    protected Random random = new Random();
+    private final Random random = new Random();
 
+    /**
+     * Starts the process.
+     *
+     * <p>
+     * This method is not intended to be overridden in subclasses.
+     * It performs the function of managing game scripts.
+     * </p>
+     */
     public void start() {
+        // Launch Logic
         Greet.greetings();
         printRules();
         int countOfRound = 0;
-        while (countOfRound < 3) {
+        int maxCountOfRound = 3;
+        while (countOfRound < maxCountOfRound) {
             String correctAnswer = askQuestionAndReturnAnswer();
             String userAnswer = Cli.readLine();
             System.out.println("Your answer: " + userAnswer);
@@ -17,8 +27,8 @@ public abstract class Engine {
                 System.out.println("Correct!");
                 countOfRound++;
             } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '" +
-                        correctAnswer + "'.");
+                String fail = "'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.";
+                System.out.println(fail);
                 System.out.println("Let's try again, " + Greet.getName() + "!");
                 return;
             }
@@ -32,4 +42,8 @@ public abstract class Engine {
     public abstract String askQuestionAndReturnAnswer();
 
     public abstract void printRules();
+
+    public int getRandom(int maxValue) {
+        return random.nextInt(maxValue) + 1;
+    }
 }

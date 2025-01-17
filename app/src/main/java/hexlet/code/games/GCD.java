@@ -4,16 +4,17 @@ import hexlet.code.Engine;
 
 
 public final class GCD extends Engine {
+    private int num1 = getRandom(50);
+    private int num2 = getRandom(50);
+
     @Override
     public String askQuestionAndReturnAnswer() {
-        int num1 = random.nextInt(50) + 1;
-        int num2 = random.nextInt(50) + 1;
         int correctAnswer;
 
         boolean check = false;
         while (!check) {
             if ((num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0)) {
-                num2 = random.nextInt(50) + 1;
+                num2 = getRandom(50);
                 continue;
             }
             check = true;
