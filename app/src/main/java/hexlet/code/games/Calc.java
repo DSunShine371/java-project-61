@@ -3,12 +3,14 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Calc extends Engine {
-    private final int num1 = getRandom(20);
-    private final int num2 = getRandom(20);
+    private static final int MAX_VALUE_FOR_NUMBERS = 20;
     private int correctAnswer;
 
     @Override
     public String askQuestionAndReturnAnswer() {
+        int num1 = getRandom(MAX_VALUE_FOR_NUMBERS);
+        int num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
+
         System.out.print("Question: ");
         switch (getRandom(2)) {
             case 0:

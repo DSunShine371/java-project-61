@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 
 public final class GCD extends Engine {
     private static final int MAX_VALUE_FOR_NUMBERS = 50;
+
     @Override
     public String askQuestionAndReturnAnswer() {
         int num1 = getRandom(MAX_VALUE_FOR_NUMBERS);
@@ -19,7 +20,6 @@ public final class GCD extends Engine {
             }
             check = true;
         }
-
         System.out.println("Question: " + num1 + " " + num2);
         while (num2 != 0) {
             int temp = num2;

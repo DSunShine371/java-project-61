@@ -3,9 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public final class Prime extends Engine {
-    private final int randomNumber = getRandom(61);
+    private static final int MAX_VALUE_FOR_NUMBERS = 61;
+
     @Override
     public String askQuestionAndReturnAnswer() {
+        int randomNumber = getRandom(MAX_VALUE_FOR_NUMBERS);
         System.out.println("Question: " + randomNumber);
         boolean isPrime = true;
         String correctAnswer;

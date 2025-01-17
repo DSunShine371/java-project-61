@@ -36,7 +36,6 @@ public abstract class Engine {
         }
         System.out.println("Congratulations, " + Greet.getName() + "!");
         System.out.println();
-
     }
 
     public abstract String askQuestionAndReturnAnswer();

@@ -8,6 +8,7 @@ public final class Progression extends Engine {
     private static final int MIN_VALUE_FOR_LENGTH = 5;
     private static final int MAX_VALUE_FOR_PROGRESSION_STEP = 5;
     private static final int MIN_VALUE_FOR_PROGRESSION_STEP = 1;
+
     @Override
     public String askQuestionAndReturnAnswer() {
         int startNum = getRandom(MAX_VALUE_FOR_START);
