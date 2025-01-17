@@ -16,6 +16,7 @@ public class App {
     private static final int GAME_OPTION_GCD = 4;
     private static final int GAME_OPTION_PROGRESSION = 5;
     private static final int GAME_OPTION_PRIME = 6;
+    private static final int MAX_GAME_OPTIONS = 6;
 
     public static void main(String[] args) {
         Even even = new Even();
@@ -68,7 +69,7 @@ public class App {
 
             try {
                 choice = Integer.parseInt(userInput);
-                if (choice >= 0 && choice <= 6) {
+                if (choice >= 0 && choice <= MAX_GAME_OPTIONS) {
                     System.out.println("You selected: " + choice);
                     System.out.println();
                     return choice;
