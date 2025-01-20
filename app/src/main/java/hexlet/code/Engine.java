@@ -8,6 +8,13 @@ public class Engine {
     private final Scanner scanner = new Scanner(System.in);
     private int countOfRound = 0;
 
+    /**
+     * Starts the game with the given questions.
+     *
+     * <p>This method can be overridden in subclasses to change its behavior.</p>
+     *
+     * @param questions an array of questions for the game
+     */
     public void start(Question[] questions) {
         while (countOfRound < MAX_COUNT_OF_ROUND) {
             printQuestion(questions[countOfRound]);
