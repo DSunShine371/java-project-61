@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
 import hexlet.code.Question;
 
 import static hexlet.code.Const.GAME_RULES_GCD;
@@ -12,8 +11,6 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class GCD {
     public void game() {
         Engine engine = new Engine();
-        Greet.greetings();
-        printRules();
         engine.start(generateQuestion());
     }
 
@@ -27,7 +24,7 @@ public final class GCD {
             }
             String question = "Question: " + num1 + " " + num2;
             String answer = getGCD(num1, num2);
-            questions[i] = new Question(question, answer);
+            questions[i] = new Question(question, answer, GAME_RULES_GCD);
         }
         return questions;
     }
@@ -43,9 +40,5 @@ public final class GCD {
 
     private static boolean checkCorrectness(int num1, int num2) {
         return (num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0);
-    }
-
-    public void printRules() {
-        System.out.println(GAME_RULES_GCD);
     }
 }

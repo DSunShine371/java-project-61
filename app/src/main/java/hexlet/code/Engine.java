@@ -16,12 +16,14 @@ public class Engine {
      * @param questions an array of questions for the game
      */
     public void start(Question[] questions) {
+        Greet.greetings();
+        printRules(questions[countOfRound]);
         while (countOfRound < MAX_COUNT_OF_ROUND) {
             printQuestion(questions[countOfRound]);
             String correctAnswer = questions[countOfRound].answer();
             String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
-
+            countOfRound++;
             if (!isCorrectAnswer(correctAnswer, userAnswer)) {
                 return;
             }
@@ -33,11 +35,13 @@ public class Engine {
     private void printQuestion(Question question) {
         System.out.println(question.question());
     }
+    private void printRules(Question question) {
+        System.out.println(question.rules());
+    }
 
     private boolean isCorrectAnswer(String correctAnswer, String userAnswer) {
         if (userAnswer.equals(correctAnswer)) {
             System.out.println("Correct!");
-            countOfRound++;
         } else {
             String fail = "'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.";
             System.out.println(fail);

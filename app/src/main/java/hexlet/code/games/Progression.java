@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
 import hexlet.code.Question;
 
 import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
@@ -17,8 +16,6 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Progression {
     public void game() {
         Engine engine = new Engine();
-        Greet.greetings();
-        printRules();
         engine.start(generateQuestion());
     }
 
@@ -39,12 +36,8 @@ public final class Progression {
             String answer = arrayNumbers[hiddenCell];
             arrayNumbers[hiddenCell] = "..";
             String question =  "Question: " + String.join(" ", arrayNumbers);
-            questions[i] = new Question(question, answer);
+            questions[i] = new Question(question, answer, GAME_RULES_PROGRESSION);
         }
         return questions;
-    }
-
-    public void printRules() {
-        System.out.println(GAME_RULES_PROGRESSION);
     }
 }

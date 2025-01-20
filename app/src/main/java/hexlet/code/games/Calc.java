@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
 import hexlet.code.Question;
 
 import static hexlet.code.Const.GAME_RULES_CALC;
@@ -12,8 +11,6 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Calc {
     public void game() {
         Engine engine = new Engine();
-        Greet.greetings();
-        printRules();
         engine.start(generateQuestion());
     }
 
@@ -40,12 +37,8 @@ public final class Calc {
                 default:
                     System.out.println("    Error\nSomething went wrong ;)");
             }
-            questions[i] = new Question(question, String.valueOf(answer));
+            questions[i] = new Question(question, String.valueOf(answer), GAME_RULES_CALC);
         }
         return questions;
-    }
-
-    public void printRules() {
-        System.out.println(GAME_RULES_CALC);
     }
 }

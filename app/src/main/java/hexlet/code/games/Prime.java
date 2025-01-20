@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
 import hexlet.code.Question;
 
 import static hexlet.code.Const.GAME_RULES_PRIME;
@@ -12,8 +11,6 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Prime extends Engine {
     public void game() {
         Engine engine = new Engine();
-        Greet.greetings();
-        printRules();
         engine.start(generateQuestion());
     }
 
@@ -23,7 +20,7 @@ public final class Prime extends Engine {
             int randomNumber = getRandomNumber(MAX_VALUE_FOR_PRIME_NUMBERS);
             String question = "Question: " + randomNumber;
             String answer = isPrime(randomNumber) ? "yes" : "no";
-            questions[i] = new Question(question, answer);
+            questions[i] = new Question(question, answer, GAME_RULES_PRIME);
         }
         return questions;
     }
@@ -38,9 +35,5 @@ public final class Prime extends Engine {
             }
         }
         return true;
-    }
-
-    public void printRules() {
-        System.out.println(GAME_RULES_PRIME);
     }
 }
