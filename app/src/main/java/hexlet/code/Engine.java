@@ -6,7 +6,6 @@ import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
 
 public class Engine {
     private final Scanner scanner = new Scanner(System.in);
-    private int countOfRound = 0;
 
     /**
      * Starts the game with the given questions.
@@ -17,6 +16,7 @@ public class Engine {
      */
     public void start(Question[] questions) {
         Greet.greetings();
+        int countOfRound = 0;
         printRules(questions[countOfRound]);
         while (countOfRound < MAX_COUNT_OF_ROUND) {
             printQuestion(questions[countOfRound]);

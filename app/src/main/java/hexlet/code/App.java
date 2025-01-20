@@ -18,7 +18,6 @@ import static hexlet.code.Const.GAME_OPTION_PRIME;
 import static hexlet.code.Const.MAX_GAME_OPTIONS;
 
 public class App {
-
     public static void main(String[] args) {
         Even even = new Even();
         Calc calc = new Calc();
