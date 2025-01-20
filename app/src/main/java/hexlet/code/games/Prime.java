@@ -1,16 +1,31 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Greet;
+import hexlet.code.Question;
 
 import static hexlet.code.Const.GAME_RULES_PRIME;
+import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
 import static hexlet.code.Const.MAX_VALUE_FOR_PRIME_NUMBERS;
+import static hexlet.code.Randomizer.getRandomNumber;
 
 public final class Prime extends Engine {
-    @Override
-    public String askQuestionAndReturnAnswer() {
-        int randomNumber = getRandom(MAX_VALUE_FOR_PRIME_NUMBERS);
-        System.out.println("Question: " + randomNumber);
-        return isPrime(randomNumber) ? "yes" : "no";
+    public void game() {
+        Engine engine = new Engine();
+        Greet.greetings();
+        printRules();
+        engine.start(generateQuestion());
+    }
+
+    private Question[] generateQuestion() {
+        Question[] questions = new Question[MAX_COUNT_OF_ROUND];
+        for (int i = 0; i < questions.length; i++) {
+            int randomNumber = getRandomNumber(MAX_VALUE_FOR_PRIME_NUMBERS);
+            String question = "Question: " + randomNumber;
+            String answer = isPrime(randomNumber) ? "yes" : "no";
+            questions[i] = new Question(question, answer);
+        }
+        return questions;
     }
 
     private static boolean isPrime(int randomNumber) {
@@ -25,7 +40,6 @@ public final class Prime extends Engine {
         return true;
     }
 
-    @Override
     public void printRules() {
         System.out.println(GAME_RULES_PRIME);
     }

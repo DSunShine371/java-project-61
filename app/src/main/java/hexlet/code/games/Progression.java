@@ -1,37 +1,49 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Greet;
+import hexlet.code.Question;
 
+import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
 import static hexlet.code.Const.MAX_VALUE_FOR_START;
 import static hexlet.code.Const.MIN_VALUE_FOR_LENGTH;
 import static hexlet.code.Const.MAX_VALUE_FOR_LENGTH;
 import static hexlet.code.Const.MIN_VALUE_FOR_PROGRESSION_STEP;
 import static hexlet.code.Const.MAX_VALUE_FOR_PROGRESSION_STEP;
 import static hexlet.code.Const.GAME_RULES_PROGRESSION;
+import static hexlet.code.Randomizer.getRandomNumber;
 
 
-public final class Progression extends Engine {
-    @Override
-    public String askQuestionAndReturnAnswer() {
-        int startNum = getRandom(MAX_VALUE_FOR_START);
-        int arrayLength = MIN_VALUE_FOR_LENGTH + getRandom(MAX_VALUE_FOR_LENGTH);
-        int progressionStep = MIN_VALUE_FOR_PROGRESSION_STEP + getRandom(MAX_VALUE_FOR_PROGRESSION_STEP);
-
-        String[] arrayNumbers = new String[arrayLength];
-        arrayNumbers[0] = String.valueOf(startNum);
-        for (int i = 1; i < arrayNumbers.length; i++) {
-            startNum += progressionStep;
-            arrayNumbers[i] = String.valueOf(startNum);
-        }
-        int hiddenCell = getRandom(arrayNumbers.length - 1);
-        String correctAnswer = arrayNumbers[hiddenCell];
-        arrayNumbers[hiddenCell] = "..";
-        String arrayForQuestion = String.join(" ", arrayNumbers);
-        System.out.println("Question: " + arrayForQuestion);
-        return correctAnswer;
+public final class Progression {
+    public void game() {
+        Engine engine = new Engine();
+        Greet.greetings();
+        printRules();
+        engine.start(generateQuestion());
     }
 
-    @Override
+    private Question[] generateQuestion() {
+        Question[] questions = new Question[MAX_COUNT_OF_ROUND];
+        for (int i = 0; i < questions.length; i++) {
+            int startNum = getRandomNumber(MAX_VALUE_FOR_START);
+            int arrayLength = MIN_VALUE_FOR_LENGTH + getRandomNumber(MAX_VALUE_FOR_LENGTH);
+            int progressionStep = MIN_VALUE_FOR_PROGRESSION_STEP + getRandomNumber(MAX_VALUE_FOR_PROGRESSION_STEP);
+
+            String[] arrayNumbers = new String[arrayLength];
+            arrayNumbers[0] = String.valueOf(startNum);
+            for (int p = 1; p < arrayNumbers.length; p++) {
+                startNum += progressionStep;
+                arrayNumbers[p] = String.valueOf(startNum);
+            }
+            int hiddenCell = getRandomNumber(arrayNumbers.length - 1);
+            String answer = arrayNumbers[hiddenCell];
+            arrayNumbers[hiddenCell] = "..";
+            String question =  "Question: " + String.join(" ", arrayNumbers);
+            questions[i] = new Question(question, answer);
+        }
+        return questions;
+    }
+
     public void printRules() {
         System.out.println(GAME_RULES_PROGRESSION);
     }

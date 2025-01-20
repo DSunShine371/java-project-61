@@ -1,20 +1,35 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Greet;
+import hexlet.code.Question;
 
 import static hexlet.code.Const.GAME_RULES_GCD;
+import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
 import static hexlet.code.Const.MAX_VALUE_FOR_GCD_NUMBERS;
+import static hexlet.code.Randomizer.getRandomNumber;
 
-public final class GCD extends Engine {
-    @Override
-    public String askQuestionAndReturnAnswer() {
-        int num1 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
-        int num2 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
-        while (checkCorrectness(num1, num2)) {
-            num2 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
+public final class GCD {
+    public void game() {
+        Engine engine = new Engine();
+        Greet.greetings();
+        printRules();
+        engine.start(generateQuestion());
+    }
+
+    private Question[] generateQuestion() {
+        Question[] questions = new Question[MAX_COUNT_OF_ROUND];
+        for (int i = 0; i < questions.length; i++) {
+            int num1 = getRandomNumber(MAX_VALUE_FOR_GCD_NUMBERS);
+            int num2 = getRandomNumber(MAX_VALUE_FOR_GCD_NUMBERS);
+            while (checkCorrectness(num1, num2)) {
+                num2 = getRandomNumber(MAX_VALUE_FOR_GCD_NUMBERS);
+            }
+            String question = "Question: " + num1 + " " + num2;
+            String answer = getGCD(num1, num2);
+            questions[i] = new Question(question, answer);
         }
-        System.out.println("Question: " + num1 + " " + num2);
-        return getGCD(num1, num2);
+        return questions;
     }
 
     private String getGCD(int num1, int num2) {
@@ -30,7 +45,6 @@ public final class GCD extends Engine {
         return (num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0);
     }
 
-    @Override
     public void printRules() {
         System.out.println(GAME_RULES_GCD);
     }

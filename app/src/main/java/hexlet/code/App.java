@@ -33,19 +33,19 @@ public class App {
                 Greet.greetings();
                 break;
             case GAME_OPTION_EVEN:
-                even.start();
+                even.game();
                 break;
             case GAME_OPTION_CALC:
-                calc.start();
+                calc.game();
                 break;
             case GAME_OPTION_GCD:
-                gcd.start();
+                gcd.game();
                 break;
             case GAME_OPTION_PROGRESSION:
-                progression.start();
+                progression.game();
                 break;
             case GAME_OPTION_PRIME:
-                prime.start();
+                prime.game();
                 break;
             default:
                 System.out.println("    Error\nSomething went wrong ;)");
