@@ -2,12 +2,13 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-public final class Prime extends Engine {
-    private static final int MAX_VALUE_FOR_NUMBERS = 61;
+import static hexlet.code.Const.GAME_RULES_PRIME;
+import static hexlet.code.Const.MAX_VALUE_FOR_PRIME_NUMBERS;
 
+public final class Prime extends Engine {
     @Override
     public String askQuestionAndReturnAnswer() {
-        int randomNumber = getRandom(MAX_VALUE_FOR_NUMBERS);
+        int randomNumber = getRandom(MAX_VALUE_FOR_PRIME_NUMBERS);
         System.out.println("Question: " + randomNumber);
         boolean isPrime = true;
         String correctAnswer;
@@ -26,6 +27,6 @@ public final class Prime extends Engine {
 
     @Override
     public void printRules() {
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println(GAME_RULES_PRIME);
     }
 }

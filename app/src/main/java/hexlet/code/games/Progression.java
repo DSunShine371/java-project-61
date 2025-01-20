@@ -2,12 +2,15 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Const.MAX_VALUE_FOR_START;
+import static hexlet.code.Const.MIN_VALUE_FOR_LENGTH;
+import static hexlet.code.Const.MAX_VALUE_FOR_LENGTH;
+import static hexlet.code.Const.MIN_VALUE_FOR_PROGRESSION_STEP;
+import static hexlet.code.Const.MAX_VALUE_FOR_PROGRESSION_STEP;
+import static hexlet.code.Const.GAME_RULES_PROGRESSION;
+
+
 public final class Progression extends Engine {
-    private static final int MAX_VALUE_FOR_START = 10;
-    private static final int MAX_VALUE_FOR_LENGTH = 5;
-    private static final int MIN_VALUE_FOR_LENGTH = 5;
-    private static final int MAX_VALUE_FOR_PROGRESSION_STEP = 5;
-    private static final int MIN_VALUE_FOR_PROGRESSION_STEP = 1;
 
     @Override
     public String askQuestionAndReturnAnswer() {
@@ -31,6 +34,6 @@ public final class Progression extends Engine {
 
     @Override
     public void printRules() {
-        System.out.println("What number is missing in the progression?");
+        System.out.println(GAME_RULES_PROGRESSION);
     }
 }

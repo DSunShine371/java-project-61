@@ -1,10 +1,13 @@
 package hexlet.code;
 
 import java.util.Random;
+import java.util.Scanner;
 
-public abstract class Engine {
-    private static final int MAX_COUNT_OF_ROUND = 3;
+import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
+
+public class Engine {
     private final Random random = new Random();
+    private final Scanner scanner = new Scanner(System.in);
 
     /**
      * Starts the process.
@@ -15,13 +18,12 @@ public abstract class Engine {
      * </p>
      */
     public void start() {
-        // Launch Logic
         Greet.greetings();
         printRules();
         int countOfRound = 0;
         while (countOfRound < MAX_COUNT_OF_ROUND) {
             String correctAnswer = askQuestionAndReturnAnswer();
-            String userAnswer = Cli.readLine();
+            String userAnswer = scanner.nextLine();
             System.out.println("Your answer: " + userAnswer);
             if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
@@ -38,9 +40,13 @@ public abstract class Engine {
         System.out.println();
     }
 
-    public abstract String askQuestionAndReturnAnswer();
+    public String askQuestionAndReturnAnswer() {
+        return null;
+    }
 
-    public abstract void printRules();
+    public void printRules() {
+
+    }
 
     /**
      * Generates a random integer between 1 and the specified maximum value.

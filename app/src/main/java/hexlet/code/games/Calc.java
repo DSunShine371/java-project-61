@@ -2,14 +2,17 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Const.GAME_RULES_CALC;
+import static hexlet.code.Const.MAX_VALUE_FOR_CALC_NUMBERS;
+
 public final class Calc extends Engine {
-    private static final int MAX_VALUE_FOR_NUMBERS = 20;
     private int correctAnswer;
 
     @Override
     public String askQuestionAndReturnAnswer() {
-        int num1 = getRandom(MAX_VALUE_FOR_NUMBERS);
-        int num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
+        int num1 = getRandom(MAX_VALUE_FOR_CALC_NUMBERS);
+        int num2 = getRandom(MAX_VALUE_FOR_CALC_NUMBERS);
+        int correctAnswer = 0;
 
         System.out.print("Question: ");
         switch (getRandom(2)) {
@@ -33,6 +36,6 @@ public final class Calc extends Engine {
 
     @Override
     public void printRules() {
-        System.out.println("What is the result of the expression?");
+        System.out.println(GAME_RULES_CALC);
     }
 }

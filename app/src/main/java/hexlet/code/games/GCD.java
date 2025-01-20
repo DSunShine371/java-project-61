@@ -2,20 +2,21 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import static hexlet.code.Const.GAME_RULES_GCD;
+import static hexlet.code.Const.MAX_VALUE_FOR_GCD_NUMBERS;
+
 
 public final class GCD extends Engine {
-    private static final int MAX_VALUE_FOR_NUMBERS = 50;
-
     @Override
     public String askQuestionAndReturnAnswer() {
-        int num1 = getRandom(MAX_VALUE_FOR_NUMBERS);
-        int num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
+        int num1 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
+        int num2 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
         int correctAnswer;
 
         boolean check = false;
         while (!check) {
             if ((num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0)) {
-                num2 = getRandom(MAX_VALUE_FOR_NUMBERS);
+                num2 = getRandom(MAX_VALUE_FOR_GCD_NUMBERS);
                 continue;
             }
             check = true;
@@ -32,6 +33,6 @@ public final class GCD extends Engine {
 
     @Override
     public void printRules() {
-        System.out.println("Find the greatest common divisor of given numbers.");
+        System.out.println(GAME_RULES_GCD);
     }
 }

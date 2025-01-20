@@ -8,15 +8,16 @@ import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
+import static hexlet.code.Const.GAME_OPTION_EXIT;
+import static hexlet.code.Const.GAME_OPTION_GREET;
+import static hexlet.code.Const.GAME_OPTION_EVEN;
+import static hexlet.code.Const.GAME_OPTION_CALC;
+import static hexlet.code.Const.GAME_OPTION_GCD;
+import static hexlet.code.Const.GAME_OPTION_PROGRESSION;
+import static hexlet.code.Const.GAME_OPTION_PRIME;
+import static hexlet.code.Const.MAX_GAME_OPTIONS;
+
 public class App {
-    private static final int GAME_OPTION_EXIT = 0;
-    private static final int GAME_OPTION_GREET = 1;
-    private static final int GAME_OPTION_EVEN = 2;
-    private static final int GAME_OPTION_CALC = 3;
-    private static final int GAME_OPTION_GCD = 4;
-    private static final int GAME_OPTION_PROGRESSION = 5;
-    private static final int GAME_OPTION_PRIME = 6;
-    private static final int MAX_GAME_OPTIONS = 6;
 
     public static void main(String[] args) {
         Even even = new Even();
