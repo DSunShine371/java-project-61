@@ -6,8 +6,6 @@ import static hexlet.code.Const.GAME_RULES_CALC;
 import static hexlet.code.Const.MAX_VALUE_FOR_CALC_NUMBERS;
 
 public final class Calc extends Engine {
-    private int correctAnswer;
-
     @Override
     public String askQuestionAndReturnAnswer() {
         int num1 = getRandom(MAX_VALUE_FOR_CALC_NUMBERS);
