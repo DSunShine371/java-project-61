@@ -16,10 +16,10 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Progression {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestion());
+        engine.start(generateQuestions());
     }
 
-    private Question[] generateQuestion() {
+    private Question[] generateQuestions() {
         Question[] questions = new Question[MAX_COUNT_OF_ROUND];
         for (int i = 0; i < questions.length; i++) {
             int startNum = getRandomNumber(MAX_VALUE_FOR_START);
