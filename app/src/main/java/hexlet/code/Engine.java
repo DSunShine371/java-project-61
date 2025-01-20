@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
 
-public class Engine {
+public abstract class Engine {
     private final Random random = new Random();
     private final Scanner scanner = new Scanner(System.in);
 
@@ -40,13 +40,9 @@ public class Engine {
         System.out.println();
     }
 
-    public String askQuestionAndReturnAnswer() {
-        return null;
-    }
+    public abstract String askQuestionAndReturnAnswer();
 
-    public void printRules() {
-
-    }
+    public abstract void printRules();
 
     /**
      * Generates a random integer between 1 and the specified maximum value.

@@ -11,7 +11,6 @@ import static hexlet.code.Const.GAME_RULES_PROGRESSION;
 
 
 public final class Progression extends Engine {
-
     @Override
     public String askQuestionAndReturnAnswer() {
         int startNum = getRandom(MAX_VALUE_FOR_START);

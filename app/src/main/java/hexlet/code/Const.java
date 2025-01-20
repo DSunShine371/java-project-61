@@ -1,6 +1,6 @@
 package hexlet.code;
 
-public class Const {
+public final class Const {
     private Const() {
         throw new UnsupportedOperationException("Const class cannot be instantiated");
     }

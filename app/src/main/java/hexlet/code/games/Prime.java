@@ -10,19 +10,19 @@ public final class Prime extends Engine {
     public String askQuestionAndReturnAnswer() {
         int randomNumber = getRandom(MAX_VALUE_FOR_PRIME_NUMBERS);
         System.out.println("Question: " + randomNumber);
-        boolean isPrime = true;
-        String correctAnswer;
+        return isPrime(randomNumber) ? "yes" : "no";
+    }
+
+    private static boolean isPrime(int randomNumber) {
         if (randomNumber <= 1) {
-            return "no";
+            return false;
         }
         for (int i = 2; i <= Math.sqrt(randomNumber); i++) {
             if (randomNumber % i == 0) {
-                isPrime = false;
-                break;
+                return false;
             }
         }
-        correctAnswer = isPrime ? "yes" : "no";
-        return correctAnswer;
+        return true;
     }
 
     @Override

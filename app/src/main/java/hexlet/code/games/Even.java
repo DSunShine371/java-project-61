@@ -10,8 +10,11 @@ public final class Even extends Engine {
     public String askQuestionAndReturnAnswer() {
         int randomNumber = getRandom(MAX_VALUE_FOR_EVEN_NUMBERS);
         System.out.println("Question: " + randomNumber);
-        boolean isEven = randomNumber % 2 == 0;
-        return isEven ? "yes" : "no";
+        return isEven(randomNumber) ? "yes" : "no";
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 
     @Override
