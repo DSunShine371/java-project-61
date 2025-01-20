@@ -28,10 +28,7 @@ public final class GCD extends Engine {
     }
 
     private static boolean checkCorrectness(int num1, int num2) {
-        if ((num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0)) {
-            return true;
-        }
-        return false;
+        return (num1 % 2 == 0 && num2 % 2 != 0) || (num1 % 2 != 0 && num2 % 2 == 0);
     }
 
     @Override
