@@ -11,7 +11,7 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Prime extends Engine {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestions());
+        engine.start(generateQuestions(), GAME_RULES_PRIME);
     }
 
     private Question[] generateQuestions() {
@@ -20,7 +20,7 @@ public final class Prime extends Engine {
             int randomNumber = getRandomNumber(MAX_VALUE_FOR_PRIME_NUMBERS);
             String question = "Question: " + randomNumber;
             String answer = isPrime(randomNumber) ? "yes" : "no";
-            questions[i] = new Question(question, answer, GAME_RULES_PRIME);
+            questions[i] = new Question(question, answer);
         }
         return questions;
     }

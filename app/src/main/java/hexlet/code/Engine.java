@@ -13,41 +13,38 @@ public class Engine {
      * <p>This method can be overridden in subclasses to change its behavior.</p>
      *
      * @param questions an array of questions for the game
+     * @param rules     a string containing the rules of the game
      */
-    public void start(Question[] questions) {
+    public void start(Question[] questions, String rules) {
         Greet.greetings();
         int countOfRound = 0;
-        printRules(questions[countOfRound]);
+        printMessage(rules);
         while (countOfRound < MAX_COUNT_OF_ROUND) {
-            printQuestion(questions[countOfRound]);
+            printMessage(questions[countOfRound].question());
             String correctAnswer = questions[countOfRound].answer();
             String userAnswer = scanner.nextLine();
-            System.out.println("Your answer: " + userAnswer);
+            printMessage("Your answer: " + userAnswer);
             countOfRound++;
             if (!isCorrectAnswer(correctAnswer, userAnswer)) {
                 return;
             }
         }
-        System.out.println("Congratulations, " + Greet.getName() + "!");
-        System.out.println();
-    }
-
-    private void printQuestion(Question question) {
-        System.out.println(question.question());
-    }
-    private void printRules(Question question) {
-        System.out.println(question.rules());
+        printMessage("Congratulations, " + Greet.getName() + "!\n");
     }
 
     private boolean isCorrectAnswer(String correctAnswer, String userAnswer) {
         if (userAnswer.equals(correctAnswer)) {
-            System.out.println("Correct!");
+            printMessage("Correct!");
         } else {
             String fail = "'" + userAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.";
-            System.out.println(fail);
-            System.out.println("Let's try again, " + Greet.getName() + "!");
+            printMessage(fail);
+            printMessage("Let's try again, " + Greet.getName() + "!");
             return false;
         }
         return true;
+    }
+
+    private void printMessage(String message) {
+        System.out.println(message);
     }
 }

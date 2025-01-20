@@ -11,7 +11,7 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class GCD {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestions());
+        engine.start(generateQuestions(), GAME_RULES_GCD);
     }
 
     private Question[] generateQuestions() {
@@ -24,7 +24,7 @@ public final class GCD {
             }
             String question = "Question: " + num1 + " " + num2;
             String answer = getGCD(num1, num2);
-            questions[i] = new Question(question, answer, GAME_RULES_GCD);
+            questions[i] = new Question(question, answer);
         }
         return questions;
     }

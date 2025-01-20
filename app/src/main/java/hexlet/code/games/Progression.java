@@ -16,7 +16,7 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Progression {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestions());
+        engine.start(generateQuestions(), GAME_RULES_PROGRESSION);
     }
 
     private Question[] generateQuestions() {
@@ -36,7 +36,7 @@ public final class Progression {
             String answer = arrayNumbers[hiddenCell];
             arrayNumbers[hiddenCell] = "..";
             String question =  "Question: " + String.join(" ", arrayNumbers);
-            questions[i] = new Question(question, answer, GAME_RULES_PROGRESSION);
+            questions[i] = new Question(question, answer);
         }
         return questions;
     }

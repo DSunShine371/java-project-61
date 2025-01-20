@@ -11,7 +11,7 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Calc {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestions());
+        engine.start(generateQuestions(), GAME_RULES_CALC);
     }
 
     private Question[] generateQuestions() {
@@ -37,7 +37,7 @@ public final class Calc {
                 default:
                     System.out.println("    Error\nSomething went wrong ;)");
             }
-            questions[i] = new Question(question, String.valueOf(answer), GAME_RULES_CALC);
+            questions[i] = new Question(question, String.valueOf(answer));
         }
         return questions;
     }

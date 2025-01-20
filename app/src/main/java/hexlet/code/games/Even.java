@@ -11,7 +11,7 @@ import static hexlet.code.Randomizer.getRandomNumber;
 public final class Even {
     public void game() {
         Engine engine = new Engine();
-        engine.start(generateQuestions());
+        engine.start(generateQuestions(), GAME_RULES_EVEN);
     }
 
     private Question[] generateQuestions() {
@@ -20,7 +20,7 @@ public final class Even {
             int randomNumber = getRandomNumber(MAX_VALUE_FOR_EVEN_NUMBERS);
             String question = "Question: " + randomNumber;
             String answer = isEven(randomNumber) ? "yes" : "no";
-            questions[i] = new Question(question, answer, GAME_RULES_EVEN);
+            questions[i] = new Question(question, answer);
         }
         return questions;
     }
