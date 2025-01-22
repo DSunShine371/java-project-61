@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
+import static hexlet.code.games.Const.MAX_COUNT_OF_ROUND;
 
 public class Engine {
     private final Scanner scanner = new Scanner(System.in);
@@ -15,13 +15,13 @@ public class Engine {
      * @param questions an array of questions for the game
      * @param rules     a string containing the rules of the game
      */
-    public void start(Question[] questions, String rules) {
+    public void start(String[][] questions, String rules) {
         Greet.greetings();
         int countOfRound = 0;
         printMessage(rules);
         while (countOfRound < MAX_COUNT_OF_ROUND) {
-            printMessage(questions[countOfRound].question());
-            String correctAnswer = questions[countOfRound].answer();
+            printMessage(questions[0][countOfRound]);
+            String correctAnswer = questions[1][countOfRound];
             String userAnswer = scanner.nextLine();
             printMessage("Your answer: " + userAnswer);
             countOfRound++;

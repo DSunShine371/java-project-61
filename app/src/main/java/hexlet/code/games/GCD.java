@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Question;
 
-import static hexlet.code.Const.GAME_RULES_GCD;
-import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
-import static hexlet.code.Const.MAX_VALUE_FOR_GCD_NUMBERS;
+import static hexlet.code.games.Const.GAME_RULES_GCD;
+import static hexlet.code.games.Const.MAX_COUNT_OF_ROUND;
+import static hexlet.code.games.Const.MAX_VALUE_FOR_GCD_NUMBERS;
+import static hexlet.code.games.Const.NUMBER_OF_TRANSFERRED_PARAMETERS;
 import static hexlet.code.Randomizer.getRandomNumber;
 
 public final class GCD {
@@ -14,9 +14,9 @@ public final class GCD {
         engine.start(generateQuestions(), GAME_RULES_GCD);
     }
 
-    private Question[] generateQuestions() {
-        Question[] questions = new Question[MAX_COUNT_OF_ROUND];
-        for (int i = 0; i < questions.length; i++) {
+    private String[][] generateQuestions() {
+        String[][] questions = new String[NUMBER_OF_TRANSFERRED_PARAMETERS][MAX_COUNT_OF_ROUND];
+        for (int i = 0; i < questions[0].length; i++) {
             int num1 = getRandomNumber(MAX_VALUE_FOR_GCD_NUMBERS);
             int num2 = getRandomNumber(MAX_VALUE_FOR_GCD_NUMBERS);
             while (checkCorrectness(num1, num2)) {
@@ -24,7 +24,8 @@ public final class GCD {
             }
             String question = "Question: " + num1 + " " + num2;
             String answer = getGCD(num1, num2);
-            questions[i] = new Question(question, answer);
+            questions[0][i] = question;
+            questions[1][i] = answer;
         }
         return questions;
     }

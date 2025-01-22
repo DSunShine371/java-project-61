@@ -8,14 +8,14 @@ import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
-import static hexlet.code.Const.GAME_OPTION_EXIT;
-import static hexlet.code.Const.GAME_OPTION_GREET;
-import static hexlet.code.Const.GAME_OPTION_EVEN;
-import static hexlet.code.Const.GAME_OPTION_CALC;
-import static hexlet.code.Const.GAME_OPTION_GCD;
-import static hexlet.code.Const.GAME_OPTION_PROGRESSION;
-import static hexlet.code.Const.GAME_OPTION_PRIME;
-import static hexlet.code.Const.MAX_GAME_OPTIONS;
+import static hexlet.code.games.Const.GAME_OPTION_EXIT;
+import static hexlet.code.games.Const.GAME_OPTION_GREET;
+import static hexlet.code.games.Const.GAME_OPTION_EVEN;
+import static hexlet.code.games.Const.GAME_OPTION_CALC;
+import static hexlet.code.games.Const.GAME_OPTION_GCD;
+import static hexlet.code.games.Const.GAME_OPTION_PROGRESSION;
+import static hexlet.code.games.Const.GAME_OPTION_PRIME;
+import static hexlet.code.games.Const.MAX_GAME_OPTIONS;
 
 public class App {
     public static void main(String[] args) {

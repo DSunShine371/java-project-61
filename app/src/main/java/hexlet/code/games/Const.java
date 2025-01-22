@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 public final class Const {
     private Const() {
@@ -20,6 +20,8 @@ public final class Const {
     public static final int MAX_VALUE_FOR_CALC_NUMBERS = 20;
 
     public static final int MAX_COUNT_OF_ROUND = 3;
+
+    public static final int NUMBER_OF_TRANSFERRED_PARAMETERS = 2;
 
     public static final int GAME_OPTION_EXIT = 0;
     public static final int GAME_OPTION_GREET = 1;

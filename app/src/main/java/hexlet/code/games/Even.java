@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Question;
 
-import static hexlet.code.Const.GAME_RULES_EVEN;
-import static hexlet.code.Const.MAX_VALUE_FOR_EVEN_NUMBERS;
-import static hexlet.code.Const.MAX_COUNT_OF_ROUND;
+import static hexlet.code.games.Const.GAME_RULES_EVEN;
+import static hexlet.code.games.Const.MAX_VALUE_FOR_EVEN_NUMBERS;
+import static hexlet.code.games.Const.MAX_COUNT_OF_ROUND;
+import static hexlet.code.games.Const.NUMBER_OF_TRANSFERRED_PARAMETERS;
 import static hexlet.code.Randomizer.getRandomNumber;
 
 public final class Even {
@@ -14,13 +14,14 @@ public final class Even {
         engine.start(generateQuestions(), GAME_RULES_EVEN);
     }
 
-    private Question[] generateQuestions() {
-        Question[] questions = new Question[MAX_COUNT_OF_ROUND];
-        for (int i = 0; i < questions.length; i++) {
+    private String[][] generateQuestions() {
+        String[][] questions = new String[NUMBER_OF_TRANSFERRED_PARAMETERS][MAX_COUNT_OF_ROUND];
+        for (int i = 0; i < questions[0].length; i++) {
             int randomNumber = getRandomNumber(MAX_VALUE_FOR_EVEN_NUMBERS);
             String question = "Question: " + randomNumber;
             String answer = isEven(randomNumber) ? "yes" : "no";
-            questions[i] = new Question(question, answer);
+            questions[0][i] = question;
+            questions[1][i] = answer;
         }
         return questions;
     }
